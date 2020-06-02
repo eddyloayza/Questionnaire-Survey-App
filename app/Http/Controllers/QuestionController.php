@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Questionnaire;
 use App\Question;
+use Illuminate\Support\Arr;
 
 class QuestionController extends Controller
 {
@@ -18,7 +19,7 @@ class QuestionController extends Controller
     {
         $data = request()->validate([
             'question.question' => 'required',
-            'answers.*.answer' => 'required',
+            'answers.*.*' => 'required',
         ]);
 
         $question = $questionnaire->questions()->create($data['question']);

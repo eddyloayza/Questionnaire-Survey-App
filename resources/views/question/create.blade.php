@@ -29,29 +29,49 @@
                                 <legend>Opciones</legend>
                                 <small id="choicesHelp" class="form-text text-muted">Ofrezca opciones que le brinden la mayor comprensión de su pregunta.</small>
 
-                                <div>
-                                    <div class="form-group">
-                                        <label for="answer1">Opción 1</label>
-                                        <input name="answers[][answer]" type="text"
-                                               value="{{ old('answers.0.answer') }}"
-                                               class="form-control" id="answer1" aria-describedby="choicesHelp" placeholder="Ingrese la opción 1">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="answer1">Opción 1</label>
+                                            <input name="answers[0][answer]" type="text" value="{{ old('answers.0.answer') }}" class="form-control" id="answer1" aria-describedby="choicesHelp" placeholder="Ingrese la opción 1">
 
-                                        @error('answers.0.answer')
-                                        <small class="text-danger">{{ $message }}</small>
-                                        @enderror
+                                            @error('answers.0.answer')
+                                            <small class="text-danger">{{ $message }}</small>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="rate1">Valor 1</label>
+                                            <input name="answers[0][rate]" min="0" max="10" type="number" value="{{ old('answers.0.rate') }}" class="form-control" id="rate1" aria-describedby="choicesHelp" placeholder="Ingrese el valor 1">
+
+                                            @error('answers.0.rate')
+                                            <small class="text-danger">{{ $message }}</small>
+                                            @enderror
+                                        </div>
                                     </div>
                                 </div>
 
-                                <div>
-                                    <div class="form-group">
-                                        <label for="answer2">Opción 2</label>
-                                        <input name="answers[][answer]" type="text"
-                                               value="{{ old('answers.1.answer') }}"
-                                               class="form-control" id="answer2" aria-describedby="choicesHelp" placeholder="Ingrese la opción 2">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="answer2">Opción 2</label>
+                                            <input name="answers[1][answer]" type="text" value="{{ old('answers.1.answer') }}" class="form-control" id="answer2" aria-describedby="choicesHelp" placeholder="Ingrese la opción 2">
 
-                                        @error('answers.1.answer')
-                                        <small class="text-danger">{{ $message }}</small>
-                                        @enderror
+                                            @error('answers.1.answer')
+                                            <small class="text-danger">{{ $message }}</small>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="rate2">Valor 2</label>
+                                            <input name="answers[1][rate]" min="0" max="10" type="number" value="{{ old('answers.1.rate') }}" class="form-control" id="rate2" aria-describedby="choicesHelp" placeholder="Ingrese el valor 2">
+
+                                            @error('answers.1.rate')
+                                            <small class="text-danger">{{ $message }}</small>
+                                            @enderror
+                                        </div>
                                     </div>
                                 </div>
 
